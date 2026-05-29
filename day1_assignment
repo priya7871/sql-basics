@@ -1,0 +1,6 @@
+create database E_commerce;
+show databases;
+use E_Commerce;
+create table Amazon(product_id int(5),product_name varchar(20),price float,quantity int);
+insert into Amazon values('1','sofa',25000,1),('2','shampoo',756.25,3),('3','seeds combo',273,4);
+select*from Amazon;
