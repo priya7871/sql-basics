@@ -1,0 +1,28 @@
+create table shopping(product_id int auto_increment primary key,product_name varchar(20),price float,qty int,manufacturing_date date);
+insert into shopping (product_name, price, qty, manufacturing_date) values
+('Rice', 42.50, 50, '2026-01-10'),
+('Wheat', 38.00, 30, '2026-02-05'),
+('Sugar', 48.75, 40, '2026-01-20'),
+('Milk', 28.00, 100, '2026-05-01'),
+('Ghee', 320.00, 20, '2026-03-15'),
+('Tea', 150.00, 60, '2025-12-10'),
+('Coffee', 420.00, 25, '2026-02-28'),
+('Salt', 12.00, 200, '2026-04-12'),
+('Oil', 180.00, 45, '2026-03-30'),
+('Pulses', 120.00, 35, '2026-01-05'),
+('Eggs', 6.50, 300, '2026-05-20'),
+('Bread', 25.00, 80, '2026-05-25'),
+('Butter', 95.00, 40, '2026-04-01'),
+('Biscuits', 40.00, 70, '2026-03-08'),
+('Noodles', 22.00, 150, '2026-02-14'),
+('Detergent', 160.00, 55, '2026-01-18'),
+('Shampoo', 210.00, 45, '2026-02-25'),
+('Toothpaste', 85.00, 90, '2026-03-02'),
+('Soap', 30.00, 120, '2026-04-20'),
+('Paneer', 160.00, 30, '2026-05-10');
+select product_name, max(price) from shopping group by product_name;
+select product_name, min(price) from shopping group by product_name;
+select max(price) as Maximum_price from shopping;
+select min(price) as Minimum_price from shopping;
+select*from shopping;
+
