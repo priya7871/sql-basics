@@ -1,0 +1,10 @@
+create table shoppings(product_name varchar(20),product_id int auto_increment primary key,price float);
+insert into shoppings (product_name, price) VALUES  ('Laptop', 75000.00),('Mobile', 25000.00),('Headphones', 5000.00),('Tablet', 35000.00),('Keyboard', 2500.00);
+
+create table orders(order_id int auto_increment primary key,product_id int,order_status varchar(20),shipping_detail varchar(20));
+insert into orders (product_id, order_status, shipping_detail) VALUES (1, 'Delivered', 'Door delivery'),(2, 'Processing', 'Dispatch tomorrow'),(1, 'Shipped', 'Express delivery'),(3, 'Pending', 'Not shipped'),(4, 'Delivered', 'Standard delivery');
+
+select shoppings.product_name,orders.shipping_detail from shoppings left join orders on shoppings.product_id=orders.product_id;
+select shoppings.product_name,orders.shipping_detail from shoppings right join orders on shoppings.product_id=orders.product_id;
+select shoppings.product_name,orders.shipping_detail from shoppings inner join orders on shoppings.product_id=orders.product_id;
+select shoppings.product_name,orders.shipping_detail from shoppings left join orders on shoppings.product_id=orders.product_id union select shoppings.product_name,orders.order_status from shoppings right join orders on shoppings.product_id=orders.product_id;
