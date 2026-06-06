@@ -1,0 +1,23 @@
+1. Create 2 tables called Students and College. Students table should have std_id,std_name,course and College table should have std_id,college_id,college_name. 
+Insert appropriate values in it.
+Write Outer Join query for this 2 tables by means of std_id column and display the result.
+
+
+create database students;
+use students;
+create table  students(std_id int auto_increment primary key,std_name varchar(20),course varchar(20));
+insert into students (std_name, course) values('Aarav', 'BCA'),('Diya', 'BSc'),('Karan', 'BCom'),('Meera', 'MBA')('Rohan','MCA'),('Ananya', 'BA'),('Vikram', 'BTech'),('Priya', 'BBA');
+
+create database college(college_id int auto_increment  primary key,std_id int,college_name varchar(100));
+insert into college(std_id ,college_name)values(1,'SDNB'),(3,'DG VAISHNAV'),(2,'LOYOLA'),(4,'MCC'),(5,'JAIN'),(6.'MOP VAIISHNAV'),(7,'SDNB'),(8,'MCC');
+
+select students.std_name,college.college_name from students left join college on students.std_id=college.std_id union select students.std_name,college.college_name from students right join college on students.std_id=college.std_id;
+
+2. Write a query for the following:
+     input: HELLO WORLD
+     output: world
+  use appropriate String functions to display the output.
+
+select lower(substring('HELLO WORLD',7,5)) as result;
+
+
