@@ -1,0 +1,26 @@
+create table students(id int auto_increment primary key,name varchar(20),subject varchar(20),mark float,course varchar(20));
+insert into students(name,subject,mark,course)values
+('Rajesh Kumar', 'Mathematics', 85.5, 'BSc'),
+('Priya Sharma', 'Physics', 78.2, 'BSc'),
+('Arun Patel', 'Chemistry', 92.0, 'BEng'),
+('Neha Singh', 'Mathematics', 67.8, 'BA'),
+('Vikram Reddy', 'Physics', 88.9, 'BSc'),
+('Anita Dessai', 'Chemistry', 75.3, 'BEng'),
+('Suresh Nair', 'Mathematics', 91.2, 'BSc'),
+('Meera Iyer', 'Physics', 82.6, 'BA'),
+('Karthik Menon', 'Chemistry', 79.4, 'BEng'),
+('Deepa Joshi', 'Mathematics', 86.7, 'BSc'),
+('Ramesh Gupta', 'Physics', 73.5, 'BA'),
+('Kavita Deshmukh', 'Chemistry', 89.1, 'BEng'),
+('Santosh Rao', 'Mathematics', 94.3, 'BSc'),
+('Preeti Kulkarni', 'Physics', 81.0, 'BA'),
+('Mohan Bhatt', 'Chemistry', 77.6, 'BEng'),
+('Ritu Verma', 'Mathematics', 88.4, 'BSc'),
+('Ashok Jadhav', 'Physics', 70.9, 'BA'),
+('Sunita Paranjpe', 'Chemistry', 93.2, 'BEng'),
+('Nitin Chavan', 'Mathematics', 84.7, 'BSc'),
+('Pooja Sawant', 'Physics', 79.8, 'BA');
+#single row subquery
+select*from students where mark>(select avg(mark) from students);
+#multi row subquery
+select*from students where mark in(select mark from students where mark>50);
